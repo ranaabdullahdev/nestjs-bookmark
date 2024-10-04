@@ -9,6 +9,7 @@ import {
 @Injectable()
 export class JwtStrategy extends PassportStrategy(
   Strategy,
+  'jwt',
 ) {
   constructor(config: ConfigService) {
     super({
@@ -19,10 +20,6 @@ export class JwtStrategy extends PassportStrategy(
     });
   }
   async validate(payload) {
-    return {
-      id: payload.sub,
-      email: payload.email,
-    };
+    return payload;
   }
-  F;
 }
