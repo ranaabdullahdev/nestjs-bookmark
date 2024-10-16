@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 import {
@@ -32,7 +32,6 @@ export class JwtStrategy extends PassportStrategy(
         where: { id: payload.sub },
       });
 
-      console.log(user);
       delete user.hash;
       return user;
     }
