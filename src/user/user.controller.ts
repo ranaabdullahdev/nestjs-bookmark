@@ -9,7 +9,7 @@ import {
 
 import { Request } from 'express';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtGurad } from 'src/auth/guard';
+import { JwtGurad } from '../auth/guard';
 import { User } from '@prisma/client';
 
 @UseGuards(JwtGurad)
